@@ -1,0 +1,14 @@
+#Author: Nijo Varghese
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: dashboard-viewer-binding
+subjects:
+  - kind: User
+    name: charlie
+    namespace: default
+roleRef:
+    kind: ClusterRole
+    name: cluster-read-all
+    apiGroup: rbac.authorization.k8s.io
